@@ -1,15 +1,21 @@
 import React from 'react'
-import {Route ,Routes} from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
+import { routeMap } from '../util/Constants'
+
+
 const AppRoutes = () => {
   return (
-    <>
-    <Routes>
-        {
-
-        }
-
-    </Routes>
-    </>
+   <>
+   <Routes>
+    {
+        routeMap?.map((route, index) => (
+            <>
+            <Route key={index} path={route.URL} element={<route.element />} />
+            </>
+        ))
+    }
+   </Routes>
+   </>
   )
 }
 
